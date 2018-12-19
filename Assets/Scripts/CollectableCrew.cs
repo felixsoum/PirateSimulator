@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollectableFish : CollectableActor
+public class CollectableCrew : CollectableActor
 {
+    [SerializeField]GameObject bodySprite;
+
     public override void OnCollectEnd()
     {
-        Player.AddFish();
+        Player.AddCrew();
     }
 
     public override void OnCollectStart()
     {
+        bodySprite.SetActive(true);
     }
-
 }
